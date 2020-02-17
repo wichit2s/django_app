@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pillow = "*"
+djangorestframework = "*"
+djongo = "*"
+mysqlclient = "*"
+django = "*"
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+use_mysql = "bash -c 'cp dockers/mysql.yml docker-compose.yml; cp settings/mysql.py mysite/settings.py'"
+use_mongo = "bash -c 'cp dockers/mongo.yml docker-compose.yml; cp settings/mongo.py mysite/settings.py'"
+use_postgres = "bash -c 'cp dockers/postgres.yml docker-compose.yml; cp settings/postgres.py mysite/settings.py'"
+use_sqlite3 = "bash -c 'cp dockers/sqlite3.yml docker-compose.yml; cp -f settings/sqlite3.py mysite/settings.py'"
+mysite = "docker-compose up"

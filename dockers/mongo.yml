@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  db:
+    image: mongo:4.2.2
+    volumes:
+      - './mongodb:/data/db'
+      - './script:/script'
+    ports:
+      - '5432:5432'
+    environment:
+       MONGO_INITDB_DATABASE: 'mysitedb'
+       MONGO_INITDB_ROOT_USERNAME: 'cs'
+       MONGO_INITDB_ROOT_PASSWORD: 'cs@ubu'
+
+  web:
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:80"
+    volumes:
+      - .:/mysite
+    ports:
+      - "80:80"
+    depends_on:
+      - db

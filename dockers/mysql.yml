@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - './mysqldata:/var/lib/mysql'
+      - './script:/script'
+    ports:
+      - '3306:3306'
+    environment:
+       MYSQL_DATABASE: 'mysitedb'
+       MYSQL_USER: 'cs'
+       MYSQL_PASSWORD: 'cs@ubu'
+       MYSQL_ROOT_PASSWORD: 'cs@ubu'
+
+  web:
+    build: .
+    command: bash -c "python manage.py makemigrations core api && python manage.py makemigrations && python manage.py runserver 0.0.0.0:80"
+    volumes:
+      - .:/mysite
+    ports:
+      - "80:80"
+    depends_on:
+      - db

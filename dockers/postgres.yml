@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres:12.1
+    volumes:
+      - './postgresdata:/var/lib/postgresql/data/pgdata'
+      - './script:/script'
+    ports:
+      - '5432:5432'
+    environment:
+       POSTGRES_DB: 'mysitedb'
+       POSTGRES_USER: 'cs'
+       POSTGRES_PASSWORD: 'cs@ubu'
+
+  web:
+    build: .
+    command: bash -c "python manage.py runserver 0.0.0.0:80"
+    volumes:
+      - .:/mysite
+    ports:
+      - "80:80"
+    depends_on:
+      - db
