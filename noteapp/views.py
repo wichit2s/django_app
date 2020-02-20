@@ -12,5 +12,5 @@ def note(request):
     else:
         form = NoteForm()
 
-    return render(request, 'note.html', {'form': form})
+    return render(request, 'noteapp/note.html', {'form': form})
 

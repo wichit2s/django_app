@@ -10,15 +10,16 @@ pillow = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 djongo = "*"
-mysqlclient = "*"
 django = "*"
 djoser = "*"
+djangrestframework-simplejwt = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
 
 [scripts]
 dropdata = "rm -rf db.sqlite3 core/migrations api/migrations"
 migrate = "bash -c 'python manage.py makemigrations core && python manage.py makemigrations && python manage.py migrate core && python manage.py migrate'"
 server = "python manage.py runserver"
 docker = "docker-compose up"
+admin = "python manage.py createsuperuser"
