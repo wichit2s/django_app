@@ -1,7 +1,7 @@
-FROM python:3.7
+FROM python:3.8-buster
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /mysite
 WORKDIR /mysite
 ADD requirements.txt /mysite/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 ADD . /mysite/
