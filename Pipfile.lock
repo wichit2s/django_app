@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "96f5b0831bbb78c1f8624914fad6f0ce2b0ab455b0aba7840048a7cfd09d50dc"
+            "sha256": "bcc7a21cce34a8c1ab6ffba414303fedade4d7af761370544573bac45c25f538"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -36,6 +36,14 @@
             ],
             "index": "pypi",
             "version": "==2.2.10"
+        },
+        "django-crispy-forms": {
+            "hashes": [
+                "sha256:0afc0ba730f52a13c02bfbd0e1423af4577a337d73a8a0ef96f2cbbc5f345ffa",
+                "sha256:2db711ce31f6f9ef42c16829cc3636e3819f97c1b22a3b706afed679bc417e88"
+            ],
+            "index": "pypi",
+            "version": "==1.8.1"
         },
         "django-templated-mail": {
             "hashes": [
@@ -207,5 +215,13 @@
             "version": "==0.2.4"
         }
     },
-    "develop": {}
+    "develop": {
+        "pygraphviz": {
+            "hashes": [
+                "sha256:50a829a305dc5a0fd1f9590748b19fece756093b581ac91e00c2c27c651d319d"
+            ],
+            "index": "pypi",
+            "version": "==1.5"
+        }
+    }
 }

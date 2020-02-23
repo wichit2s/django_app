@@ -1,0 +1,38 @@
+[
+  {
+    "model": "core.Member",
+    "pk": "mana",
+    "fields": {
+      "name": "มานะ รักเผ่าไทย",
+      "email": "mana@ubu.ac.th",
+      "dob": "1991-01-01"
+    }
+  },
+  {
+    "model": "core.Member",
+    "pk": "manee",
+    "fields": {
+      "name": "มานี รักเผ่าไทย",
+      "email": "manee@ubu.ac.th",
+      "dob": "1992-01-02"
+    }
+  },
+  {
+    "model": "core.Member",
+    "pk": "piti",
+    "fields": {
+      "name": "ปิติ พิทักษ์ถิ่น",
+      "email": "piti@ubu.ac.th",
+      "dob": "1992-01-03"
+    }
+  },
+  {
+    "model": "core.Member",
+    "pk": "chujai",
+    "fields": {
+      "name": "ชูใจ เลิศล้ำ",
+      "email": "chujai@ubu.ac.th",
+      "dob": "1992-01-04"
+    }
+  }
+]

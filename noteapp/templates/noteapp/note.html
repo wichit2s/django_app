@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
-
+{% extends 'noteapp/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
   <form method="POST" action="/note/" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form }}
+    {{ form|crispy }}
     <button type="submit" class="btn btn-success">Save</button>
   </form>
 {% endblock %}
