@@ -81,13 +81,34 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+mongo = {
+    'ENGINE': 'djongo',
+    'NAME': 'mysitedb',
+    #'HOST': '127.0.0.1',
+    'HOST': 'db', # when run with docker-compose up
+    'PORT': 27017,
+}
+mysql = {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'mysitedb',
+    #'HOST': '127.0.0.1',
+    'HOST': 'db', # when run with docker-compose up
+    'PORT': 3306,
+}
+postgres = {
+    'ENGINE': 'django.db.backends.postgresql',
+    #'HOST': '127.0.0.1', 
+    'HOST': 'db', # when run with docker-compose up
+    'PORT': 5432,
+}
+sqlite3 = {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+}
 
-#db = dbsettings.mongo
-#db = dbsettings.mysql
-#db = dbsettings.postgres
-db = dbsettings.sqlite3
-db['USER'] = 'cs'
-db['PASSWORD'] = 'cs@ubu'
+db = sqlite3
+db['USER'] = 'user'
+db['PASSWORD'] = 'p2ssw0rd'
 
 DATABASES = {
     'default': db
@@ -172,6 +193,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

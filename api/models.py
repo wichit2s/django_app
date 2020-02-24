@@ -7,7 +7,7 @@ class MemberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Member
-        fields = [ 'login', 'name', 'email', 'avatar', 'dob' ]
+        fields = [ 'username', 'first_name', 'last_name', 'email', 'avatar', 'dob' ]
 
 class NoteSerializer(serializers.ModelSerializer):
 

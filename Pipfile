@@ -8,11 +8,10 @@ pygraphviz = "*"
 
 [packages]
 pillow = "*"
+django = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 djongo = "*"
-mysqlclient = "*"
-django = "*"
 djoser = "*"
 django-crispy-forms = "*"
 
@@ -20,9 +19,9 @@ django-crispy-forms = "*"
 python_version = "3.7"
 
 [scripts]
-dropdata = "rm -rf db.sqlite3 core/migrations api/migrations"
-migrate = "bash -c 'python manage.py makemigrations core && python manage.py makemigrations && python manage.py migrate core && python manage.py migrate'"
-loaddata = "bash -c 'python manage.py loaddata members.json'"
+dropdata = "python scripts/dropdata.py"
+migrate = "python scripts/migrate.py"
+loaddata = "python scripts/loaddata.py"
 server = "python manage.py runserver"
 admin = "python manage.py createsuperuser"
 docker = "docker-compose up"

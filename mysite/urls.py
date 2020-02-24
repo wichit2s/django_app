@@ -33,6 +33,6 @@ urlpatterns = [
 
     path('auth/', include('djoser.urls')),
 
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('restapi/token/', TokenObtainPairView.as_view(), name='token_obtain'),
+    path('restapi/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
